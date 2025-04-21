@@ -1,0 +1,386 @@
+/* Usar las variables de style.css */
+:root {
+  --primary-bg: #272727;
+  --secondary-bg: #393939;
+  --accent-color: #4CAF50;
+  --text-color: #ffffff;
+  --text-muted: #919191;
+  --error-color: #f44336;
+  --success-color: #4CAF50;
+  --info-color: #2196F3;
+}
+
+/* Estilos generales */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--primary-bg);
+  padding: 20px;
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text-color);
+}
+
+/* Header */
+.header {
+  background-color: var(--secondary-bg);
+  color: var(--text-color);
+  padding: 15px 0;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+
+/* Tarjetas de espacios */
+.space-card {
+  background-color: var(--secondary-bg);
+  border-radius: 10px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.space-card:hover {
+  transform: translateY(-5px);
+}
+
+.space-header {
+  padding: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.space-body {
+  padding: 15px;
+}
+
+/* Estados de los espacios */
+.available {
+  border-left: 4px solid var(--success-color);
+}
+
+.occupied {
+  border-left: 4px solid var(--error-color);
+}
+
+/* Badge para estado */
+.badge {
+  font-size: 0.9em;
+  padding: 5px 10px;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--text-color);
+}
+
+/* Botones */
+.btn-action {
+  margin-right: 5px;
+  padding: 8px 16px;
+  font-size: 14px;
+  color: var(--text-color);
+  background: transparent;
+  border: 1px solid var(--accent-color);
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.btn-action:hover {
+  background: var(--accent-color);
+  color: var(--text-color);
+}
+
+/* Botón de actualizar y filtro */
+.custom-refresh-btn {
+  color: var(--accent-color);
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 2px solid var(--accent-color);
+  padding: 0.3rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-weight: bold;
+  background: transparent;
+  position: relative;
+  transition: all 1s;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.custom-refresh-btn:hover {
+  color: var(--text-color);
+}
+
+.custom-refresh-btn::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  top: 0;
+  left: -40px;
+  transform: skewX(45deg);
+  background-color: var(--accent-color);
+  z-index: -1;
+  transition: all 1s;
+}
+
+.custom-refresh-btn:hover::before {
+  width: 160%;
+}
+
+i.fas.fa-redo-alt,
+i.bi.bi-funnel {
+  color: var(--text-color);
+  font-size: 0.9rem;
+  transition: transform 0.5s ease;
+}
+
+.custom-refresh-btn:hover i.fas.fa-redo-alt,
+.custom-refresh-btn:hover i.bi.bi-funnel {
+  transform: rotate(360deg);
+}
+
+/* Sección de filtros */
+.filter-section {
+  background-color: var(--secondary-bg);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  color: var(--text-color);
+}
+
+/* Modal */
+.modal-content {
+  background-color: var(--secondary-bg);
+  border-radius: 10px;
+  color: var(--text-color);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+}
+
+/* Formularios dentro del modal */
+.form-group {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.form-group label {
+  color: var(--text-color);
+  font-size: 16px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: var(--text-color);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--text-muted);
+  outline: none;
+  transition: border-bottom-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-bottom-color: var(--accent-color);
+}
+
+/* Botones del modal */
+.modal-footer .btn {
+  padding: 10px 20px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.modal-footer .btn-secondary {
+  background: transparent;
+  border: 1px solid var(--text-muted);
+  color: var(--text-muted);
+}
+
+.modal-footer .btn-secondary:hover {
+  background: var(--text-muted);
+  color: var(--text-color);
+}
+
+.modal-footer .btn-primary,
+.modal-footer .btn-danger,
+.modal-footer .btn-success {
+  background: transparent;
+  border: 1px solid var(--accent-color);
+  color: var(--text-color);
+}
+
+.modal-footer .btn-primary:hover,
+.modal-footer .btn-danger:hover,
+.modal-footer .btn-success:hover {
+  background: var(--accent-color);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .space-card {
+    margin-bottom: 15px;
+  }
+
+  .filter-section {
+    padding: 15px;
+  }
+
+  .custom-refresh-btn {
+    padding: 0.2rem 0.8rem;
+    font-size: 0.75rem;
+  }
+}
+
+.card-body {
+  background-color: #393939;
+  color: white;
+  border-radius: 5px;
+}
+
+.card.mb-4{
+  background-color: #393939;
+  border-radius: 5px;
+  box-shadow: 0 10px 8px rgba(0, 0, 0, 0.2);
+
+}
+
+button.btn.btn-outline-secondary.btn-sm.details-btn {
+  color: white;
+  background-color: rgb(88, 88, 88);
+  border-color: red;
+  padding: 5px 13px;
+  border: 0;
+  border-radius: 5px;
+  color: #ffffff;
+  font-weight: Bold;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  margin-left: 3px;
+}
+
+button.btn.btn-outline-secondary.btn-sm.details-btn:hover {
+  background-color: #292929;
+  box-shadow: 0 0 20px #37373750;
+  transform: scale(1.1);
+}
+
+button.btn.btn-warning.btn-sm.free-btn {
+  color: white;
+  background-color: red;
+  border-color: red;
+  padding: 5px 13px;
+  border: 0;
+  border-radius: 5px;
+  color: #ffffff;
+  font-weight: Bold;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  margin-right: 3px;
+}
+
+button.btn.btn-warning.btn-sm.free-btn:hover {
+  background-color: #ff0000;
+  box-shadow: 0 0 20px #ff3c3c50;
+  transform: scale(1.1);
+}
+
+button.btn.btn-primary.btn-sm.occupy-btn {
+  color: white;
+  background-color: #2196F3;
+  border-color: #2196F3;
+  padding: 5px 13px;
+  border: 0;
+  border-radius: 5px;
+  color: #ffffff;
+  font-weight: Bold;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  margin-right: 3px;
+  margin-left: 3px;
+}
+
+button.btn.btn-primary.btn-sm.occupy-btn:hover {
+  background-color: #018cff;
+  box-shadow: 0 0 20px #2196F3;
+  transform: scale(1.1);
+}
+
+button.btn.btn-success.btn-sm.reserve-btn {
+  color: white;
+  background-color: #28a745;
+  border-color: #28a745;
+  padding: 5px 13px;
+  border: 0;
+  border-radius: 5px;
+  color: #ffffff;
+  font-weight: Bold;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  margin-right: 3px;
+}
+
+button.btn.btn-success.btn-sm.reserve-btn:hover {
+  background-color: #218838;
+  box-shadow: 0 0 20px #28a74550;
+  transform: scale(1.1);
+}
+
+button.btn.btn-primary.btn-sm.occupy-reserved-btn {
+  color: white;
+  background-color: #2196F3;
+  border-color: #2196F3;
+  padding: 5px 13px;
+  border: 0;
+  border-radius: 5px;
+  color: #ffffff;
+  font-weight: Bold;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  margin-right: 3px;
+}
+
+button.btn.btn-primary.btn-sm.occupy-reserved-btn:hover {
+  background-color: #018cff;
+  box-shadow: 0 0 20px #2196F3;
+  transform: scale(1.1);
+}
+
+.card.m-2.shadow-sm {
+  background-color: #393939;
+  color: white;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+}
+
+/* Validación de formularios */
+.was-validated .form-control:invalid, 
+.was-validated .form-select:invalid {
+  border-color: #dc3545;
+}
+
+.was-validated .form-control:valid, 
+.was-validated .form-select:valid {
+  border-color: #198754;
+}
+
+/* Modal de reserva */
+#reserveSpaceModal .modal-header {
+  background-color: #198754;
+}
+
+#confirmReserveBtn {
+  min-width: 150px;
+}
+
+
+

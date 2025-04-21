@@ -1,0 +1,222 @@
+:root {
+  --primary-bg: #272727;
+  --secondary-bg: #393939;
+  --accent-color: #4CAF50;
+  --text-color: #ffffff;
+  --text-muted: #aaaaaa;
+  --hover-color: #3d8b40;
+  --card-bg: #393939;
+  --border-radius: 8px;
+}
+
+/* Estilos generales */
+body {
+  background-color: var(--primary-bg) !important;
+  color: var(--text-color) !important;
+  font-family: Arial, sans-serif;
+}
+
+/* Contenedor principal */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Encabezado */
+h1 {
+  color: var(--text-color) !important;
+  font-weight: bold;
+}
+
+h5 {
+  color: var(--text-color) !important;
+  font-weight: bold;
+}
+
+h6 {
+  color: var(--text-color) !important;
+  font-weight: bold;
+}
+
+p.fs-4 {
+  color: #3d8b40 !important;
+}
+
+.btn-primary i.bi-file-earmark-bar-graph {
+  color: #ffffff !important;
+}
+
+label.form-label {
+  color: #ffffff;
+}
+
+/* Tarjetas */
+.card {
+  background-color: var(--card-bg) !important;
+  border: none !important;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
+.card-title {
+  color: var(--text-color) !important;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+#startDate {
+  background-color: white !important;
+  color: black !important;
+}
+
+#endDate {
+  background-color: white !important;
+  color: black !important;
+}
+
+#vehicleTypeFilter {
+  background-color: white !important;
+  color: black !important;
+}
+
+/* Botones */
+.btn-primary {
+  background-color: var(--accent-color) !important;
+  border-color: var(--accent-color) !important;
+  color: var(--text-color) !important;
+  border-radius: var(--border-radius);
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--hover-color) !important;
+  border-color: var(--hover-color) !important;
+}
+
+/* Inputs y selectores */
+.form-control, .form-select {
+  background-color: var(--secondary-bg) !important;
+  border-color: var(--text-muted) !important;
+  color: var(--text-color) !important;
+  border-radius: var(--border-radius);
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--accent-color) !important;
+  box-shadow: 0 0 0 0.2rem rgba(76, 175, 80, 0.25) !important;
+  background-color: var(--secondary-bg) !important;
+  color: var(--text-color) !important;
+}
+
+/* Tabla de reportes */
+.table-responsive .table#detailedReportTable {
+  width: 100% !important;
+  color: var(--text-color) !important;
+  background-color: var(--card-bg) !important;
+  border-collapse: collapse !important;
+}
+
+.table#detailedReportTable thead {
+  background-color: var(--accent-color) !important;
+  color: var(--text-color) !important;
+}
+
+.table#detailedReportTable thead th {
+  padding: 12px !important;
+  text-align: left !important;
+  vertical-align: middle !important;
+  color: var(--text-color) !important;
+  border-bottom: 2px solid var(--text-muted) !important;
+}
+
+.table#detailedReportTable tbody {
+  background-color: var(--card-bg) !important;
+}
+
+.table#detailedReportTable tbody tr {
+  background-color: var(--card-bg) !important;
+  border-bottom: 1px solid var(--text-muted) !important;
+}
+
+.table#detailedReportTable tbody tr:nth-child(even) {
+  background-color: var(--secondary-bg) !important;
+}
+
+.table#detailedReportTable tbody tr:hover {
+  background-color: var(--hover-color) !important;
+}
+
+.table#detailedReportTable td {
+  padding: 12px !important;
+  text-align: left !important;
+  vertical-align: middle !important;
+  color: var(--text-color) !important;
+  border-bottom: 1px solid var(--text-muted) !important;
+}
+
+/* Anular estilos de Bootstrap */
+.table, .table-striped, .table-responsive {
+  background-color: var(--card-bg) !important;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: var(--card-bg) !important;
+}
+
+/* Alertas */
+.alert {
+  border-radius: var(--border-radius);
+  margin-bottom: 20px;
+  color: var(--text-color) !important;
+  background-color: var(--secondary-bg) !important;
+  border-color: var(--text-muted) !important;
+}
+
+/* Gráfico */
+canvas#occupationChart {
+  max-height: 400px;
+  background-color: var(--card-bg) !important;
+}
+
+/* Flatpickr personalizado */
+.flatpickr-calendar {
+  background-color: var(--card-bg) !important;
+  color: var(--text-color) !important;
+}
+
+.flatpickr-day {
+  color: var(--text-color) !important;
+  background-color: var(--secondary-bg) !important;
+}
+
+.flatpickr-day:hover {
+  background-color: var(--hover-color) !important;
+}
+
+.flatpickr-day.selected {
+  background-color: var(--accent-color) !important;
+  color: var(--text-color) !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card-body {
+    padding: 15px;
+  }
+
+  .table#detailedReportTable th, .table#detailedReportTable td {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+}
+
+.table-responsive .table#detailedReportTable * {
+  background-color: var(--card-bg) !important;
+  color: var(--text-color) !important;
+}

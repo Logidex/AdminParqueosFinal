@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Usuarios | ParkingAdmin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/public/css/style_usuarios.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Contenedor de notificaciones -->
+        <div id="notifications"></div>
+
+        <!-- Encabezado -->
+        <div class="page-header">
+            <h1 class="page-title"><i class="fas fa-users"></i> Gestión de Usuarios</h1>
+            <div class="header-actions">
+                <button class="btn-add-user">
+                    <i class="fas fa-plus"></i> Nuevo Usuario
+                </button>
+            </div>
+        </div>
+
+        <!-- Barra de búsqueda y filtros -->
+        <div class="user-actions">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Buscar usuarios...">
+            </div>
+
+            <div class="filter-group">
+                <select style="background: #393939; color: white; border: none; padding: 10px; border-radius: 5px;">
+                    <option value="">Todos los roles</option>
+                    <option value="Administrador">Administrador</option>
+                    <option value="Operador">Operador</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Tabla de usuarios -->
+        <div class="users-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Usuario</th>
+                        <th>Email</th>
+                        <th>Rol</th>
+                        <th>Estado</th>
+                        <th>Último acceso</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Los usuarios se llenarán dinámicamente -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Paginación -->
+        <div class="pagination">
+            <!-- La paginación se llenará dinámicamente -->
+        </div>
+    </div>
+
+    <script src="/public/js/usuarios.js"></script>
+</body>
+</html>

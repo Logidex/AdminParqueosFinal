@@ -1,0 +1,312 @@
+/* style_dashboard.css - Estilos para el Dashboard */
+
+:root {
+  /* Colores principales */
+  --primary-color: #3d8b40;       /* Azul principal */
+  --secondary-color: #2ecc71;     /* Verde para disponibilidad */
+  --danger-color: #e74c3c;        /* Rojo para ocupado */
+  --warning-color: #f39c12;       /* Amarillo/naranja para reservados */
+  --dark-color: #ffffff;          /* Color oscuro para textos */
+  --light-color: #393939;         /* Color claro de fondo */
+  --gray-color: #ffffff;          /* Color gris para elementos secundarios */
+  --refresh-color: #005566;       /* Color para texto de actualizar */
+  --button-blue: #0288d1;         /* Azul vibrante para refresh-btn */
+  --button-blue-hover: #0277bd;   /* Azul oscuro para hover */
+  --button-red: #d32f2f;          /* Rojo vibrante para logout-btn */
+  --button-red-hover: #b71c1c;    /* Rojo oscuro para hover */
+}
+
+/* Estilos generales */
+body {
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Encabezado del dashboard */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.dashboard-header h1 {
+  font-size: 1.8rem;
+  margin: 0;
+  color: var(--dark-color);
+}
+
+/* Contenedor principal */
+.main-content {
+  padding: 30px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Estilos para las tarjetas de estadísticas */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.card {
+  background: linear-gradient(145deg, #2a2a2a, #202020);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--dark-color);
+}
+
+.card span {
+  color: var(--gray-color);
+  font-size: 1rem;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.card i {
+  font-size: 2.8rem;
+  opacity: 0.8;
+  transition: transform 0.3s ease;
+}
+
+.card:hover i {
+  transform: scale(1.1);
+}
+
+/* Colores específicos para cada tarjeta */
+.card:nth-child(1) i { color: var(--primary-color); }   /* Espacios totales */
+.card:nth-child(2) i { color: var(--danger-color); }   /* Ocupados */
+.card:nth-child(3) i { color: var(--secondary-color); } /* Disponibles */
+.card:nth-child(4) i { color: var(--warning-color); }  /* Reservados */
+
+/* Estilos para la sección de últimos movimientos */
+.recent-parks .card {
+  display: block;
+  background: linear-gradient(145deg, #2a2a2a, #202020);
+}
+
+/* Encabezado de la tarjeta */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.card-header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--dark-color);
+}
+
+/* Botón de actualizar */
+.refresh-btn {
+  background-color: var(--button-blue);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0.2px;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.refresh-btn:hover {
+  background-color: var(--button-blue-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 0 8px rgba(2, 136, 209, 0.5); /* Efecto "pulse" */
+}
+
+i.fa-solid.fa-redo-alt {
+  color: #ffffff; /* Blanco para el ícono */
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+}
+
+.refresh-btn:hover i.fa-solid.fa-redo-alt {
+  transform: rotate(360deg);
+}
+
+/* Botón de logout */
+.logout-btn {
+  background-color: var(--button-red);
+  color: #ffffff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: var(--button-red-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para la tabla */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #252525;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+th {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+}
+
+td {
+  color: var(--gray-color);
+  font-size: 0.9rem;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Estilos para los estados */
+.status {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.status.occupied {
+  background-color: var(--danger-color);
+}
+
+.status.available {
+  background-color: var(--secondary-color);
+}
+
+.status.reserved {
+  background-color: var(--warning-color);
+}
+
+/* Estilos para loading y errores */
+.loading {
+  text-align: center;
+  padding: 24px;
+  color: var(--gray-color);
+  font-size: 1.1rem;
+}
+
+.error-message {
+  color: var(--danger-color);
+  background-color: rgba(231, 76, 60, 0.15);
+  padding: 16px;
+  border-radius: 8px;
+  margin-top: 20px;
+  text-align: center;
+  font-weight: 500;
+}
+
+i.fa-solid.fa-retweet{
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 20px;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .card {
+    padding: 18px;
+  }
+
+  .card h1 {
+    font-size: 2.2rem;
+  }
+
+  th, td {
+    padding: 10px 12px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card h1 {
+    font-size: 1.8rem;
+  }
+
+  .card span {
+    font-size: 0.9rem;
+  }
+
+  .refresh-btn, .logout-btn {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+}
+  
+  

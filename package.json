@@ -1,0 +1,34 @@
+{
+  "name": "admin-parqueos-sql",
+  "version": "1.0.0",
+  "description": "Sistema de administración de parqueos con SQL Server",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "audit": "npm audit --production"
+  },
+  "dependencies": {
+    "admin-parqueos-sql": "file:",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "express-rate-limit": "^7.5.0",
+    "express-validator": "^7.0.1",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "jspdf": "^3.0.1",
+    "jspdf-autotable": "^5.0.2",
+    "mssql": "^11.0.1",
+    "path-to-regexp": "^6.2.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}
