@@ -15,7 +15,7 @@ const app = express()
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.get('/', (req, res) => {
-  res.redirect('/html/login.html');
+  res.sendFile(path.join(__dirname, 'public/html/login.html'));
 });
 
 // Validación de variables de entorno requeridas
