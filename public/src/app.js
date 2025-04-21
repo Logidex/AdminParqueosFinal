@@ -15,7 +15,7 @@ const app = express()
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.get('/', (req, res) => {
-  const filePath = path.join(__dirname, '../public/html/login.html');
+  const filePath = path.join(__dirname, '../html/login.html');
   console.log('Intentando servir archivo:', filePath); // Para depuración
   res.sendFile(filePath, (err) => {
     if (err) {
