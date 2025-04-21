@@ -4,7 +4,7 @@
   "description": "Sistema de administración de parqueos con SQL Server",
   "main": "app.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node public/src/server.js",
     "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "audit": "npm audit --production"
