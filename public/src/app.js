@@ -15,7 +15,17 @@ const app = express()
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public/html/login.html'));
+  const filePath = path.join(__dirname, '../public/html/login.html');
+  console.log('Intentando servir archivo:', filePath); // Para depuración
+  res.sendFile(filePath, (err) => {
+    if (err) {
+      console.error('Error al servir login.html:', err);
+      res.status(500).json({
+        success: false,
+        message: 'Error al cargar la página de inicio de sesión'
+      });
+    }
+  });
 });
 
 // Validación de variables de entorno requeridas
