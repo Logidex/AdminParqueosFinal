@@ -2,7 +2,7 @@
   "name": "admin-parqueos-sql",
   "version": "1.0.0",
   "description": "Sistema de administración de parqueos con SQL Server",
-  "main": "app.js",
+  "main": "src/app.js",
   "scripts": {
     "start": "node public/src/app.js",
     "dev": "nodemon app.js",
