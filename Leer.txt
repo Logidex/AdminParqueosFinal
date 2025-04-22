@@ -1,0 +1,1 @@
+para ejecutar, hacer cd a public/src y luego si se implementaran mejoras nodemon app.js para que se reinicie automaticamente despues de hacer cambios, si no, node app.js, para cerrar control + c. luego usar live server e iniciar el login.html para empezar.
